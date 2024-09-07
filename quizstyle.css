@@ -1,0 +1,92 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #00c6ff, #0072ff); /* Technology-themed gradient background */
+    overflow: hidden;
+}
+
+.container {
+    background: #1e1e1e; /* Dark background for contrast */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 800px;
+    height: 90vh;
+    overflow-y: auto;
+    color: #e0e0e0; /* Light text color for readability */
+}
+
+h1 {
+    text-align: center;
+    color: #00c6ff; /* Bright, tech-inspired color */
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.question {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 1rem;
+}
+
+.question h2 {
+    margin-bottom: 0.5rem;
+    color: #e0e0e0; /* Light color for questions */
+    font-size: 1.2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    background: #333; /* Dark background for labels */
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+
+input[type="radio"] {
+    margin-right: 0.5rem;
+    accent-color: #00c6ff; /* Bright color for radio buttons */
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #0072ff; /* Bright, tech-inspired color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.result {
+    display: none;
+    margin-top: 2rem;
+    text-align: center;
+    padding: 1rem;
+    background: #333;
+    border-radius: 10px;
+}
+
+.result h2 {
+    margin-bottom: 1rem;
+    color: #00c6ff; /* Bright color for result heading */
+}
+
+.result p {
+    font-size: 1.2rem;
+    color: #e0e0e0; /* Light color for result text */
+}

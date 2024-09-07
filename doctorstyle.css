@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(to right, #e3f2fd, #ffffff); /* Light blue to white gradient */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(to right, #4caf50, #2e7d32); /* Green gradient */
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 2.2em;
+}
+
+.nav-links {
+    margin-top: 10px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #e1bee7; /* Light purple color */
+}
+
+main {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.section {
+    margin: 20px 0;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #0288d1; /* Blue color */
+    border-bottom: 2px solid #0288d1;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+a {
+    color: #4caf50; /* Green color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+form {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f1f8e9; /* Light green background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+form button {
+    padding: 10px 20px;
+    background: linear-gradient(to right, #0288d1, #0277bd); /* Blue gradient button */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: linear-gradient(to right, #0277bd, #0288d1); /* Reverse gradient on hover */
+}

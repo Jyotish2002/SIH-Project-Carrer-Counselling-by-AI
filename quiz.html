@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Quiz</title>
+    <link rel="stylesheet" href="quizstyle.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Career Selection Quiz</h1>
+        <form id="quiz-form">
+            <div class="question">
+                <h2>1. What type of activities do you enjoy?</h2>
+                <label><input type="radio" name="question1" value="Tech"> Working with technology</label>
+                <label><input type="radio" name="question1" value="Data"> Analyzing data</label>
+                <label><input type="radio" name="question1" value="Design"> Creating designs</label>
+                <label><input type="radio" name="question1" value="Medical"> Helping others through medicine</label>
+            </div>
+
+            <div class="question">
+                <h2>2. How do you prefer to work?</h2>
+                <label><input type="radio" name="question2" value="Team"> As part of a team</label>
+                <label><input type="radio" name="question2" value="Solo"> Independently</label>
+                <label><input type="radio" name="question2" value="Both"> Both team and solo</label>
+            </div>
+
+            <div class="question">
+                <h2>3. What is your preferred work environment?</h2>
+                <label><input type="radio" name="question3" value="Office"> Office setting</label>
+                <label><input type="radio" name="question3" value="Field"> Fieldwork</label>
+                <label><input type="radio" name="question3" value="Remote"> Remote work</label>
+            </div>
+
+            <div class="question">
+                <h2>4. What level of education are you willing to pursue?</h2>
+                <label><input type="radio" name="question4" value="HighSchool"> High school diploma</label>
+                <label><input type="radio" name="question4" value="Undergrad"> Undergraduate degree</label>
+                <label><input type="radio" name="question4" value="Postgrad"> Postgraduate degree</label>
+                <label><input type="radio" name="question4" value="PhD"> PhD or equivalent</label>
+            </div>
+
+            <div class="question">
+                <h2>5. How do you handle stressful situations?</h2>
+                <label><input type="radio" name="question5" value="Calm"> I stay calm and focused</label>
+                <label><input type="radio" name="question5" value="Manage"> I manage stress through organization</label>
+                <label><input type="radio" name="question5" value="Delegate"> I delegate tasks to manage stress</label>
+                <label><input type="radio" name="question5" value="Avoid"> I prefer to avoid stressful situations</label>
+            </div>
+
+            <div class="question">
+                <h2>6. How important is work-life balance to you?</h2>
+                <label><input type="radio" name="question6" value="Very"> Very important</label>
+                <label><input type="radio" name="question6" value="Moderate"> Moderately important</label>
+                <label><input type="radio" name="question6" value="Somewhat"> Somewhat important</label>
+                <label><input type="radio" name="question6" value="NotImportant"> Not very important</label>
+            </div>
+
+            <div class="question">
+                <h2>7. What type of problems do you like to solve?</h2>
+                <label><input type="radio" name="question7" value="Technical"> Technical problems</label>
+                <label><input type="radio" name="question7" value="Analytical"> Analytical problems</label>
+                <label><input type="radio" name="question7" value="Creative"> Creative problems</label>
+                <label><input type="radio" name="question7" value="Medical"> Medical or humanitarian problems</label>
+            </div>
+
+            <div class="question">
+                <h2>8. How do you prefer to interact with others?</h2>
+                <label><input type="radio" name="question8" value="InPerson"> In person</label>
+                <label><input type="radio" name="question8" value="Online"> Online</label>
+                <label><input type="radio" name="question8" value="Mixed"> A mix of both</label>
+                <label><input type="radio" name="question8" value="Solo"> Prefer working alone</label>
+            </div>
+
+            <div class="question">
+                <h2>9. What motivates you the most?</h2>
+                <label><input type="radio" name="question9" value="Innovation"> Innovation and creativity</label>
+                <label><input type="radio" name="question9" value="Success"> Achieving success and recognition</label>
+                <label><input type="radio" name="question9" value="Helping"> Helping others and making a difference</label>
+                <label><input type="radio" name="question9" value="Security"> Job security and stability</label>
+            </div>
+
+            <div class="question">
+                <h2>10. What kind of tasks do you enjoy?</h2>
+                <label><input type="radio" name="question10" value="Research"> Research and analysis</label>
+                <label><input type="radio" name="question10" value="Design"> Design and creation</label>
+                <label><input type="radio" name="question10" value="Management"> Management and coordination</label>
+                <label><input type="radio" name="question10" value="Support"> Support and assistance</label>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="result" class="result">
+            <h2>Your Recommended Career</h2>
+            <p id="career-result"></p>
+            <p id="career-link"></p>
+        </div>
+    </div>
+
+    <script src="quizscript.js"></script>
+</body>
+</html>
