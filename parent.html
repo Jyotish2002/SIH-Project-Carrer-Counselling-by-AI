@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parent Engagement</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+  
+    #chatbot-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #FF6347; 
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+    }
+
+
+    #chatbot-toggle:hover {
+      background-color: #FF4500; 
+    }
+    
+   
+    #chatbot {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 350px;
+      height: 500px;
+      background-color: #F5F5F5;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      display: none;
+      flex-direction: column;
+      border: 2px solid rgb(0, 123, 255);
+    }
+
+
+    #chatbot-header {
+      background-color: #FF6347; 
+      color: white;
+      padding: 10px;
+      border-radius: 15px 15px 0 0;
+      text-align: center;
+      font-weight: bold;
+      border-bottom: 2px solid rgb(0, 123, 255);
+    }
+
+
+    #chatbot-body {
+      padding: 10px;
+      overflow-y: auto;
+      flex-grow: 1;
+    }
+
+
+    #chatbot-footer {
+      padding: 10px;
+      border-top: 1px solid #E5E7EB;
+      background-color: #F9FAFB;
+    }
+
+
+    #chatbot-input {
+      width: 100%;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #E5E7EB;
+    }
+
+
+    #chatbot-send {
+      margin-top: 5px;
+      padding: 8px;
+      width: 100%;
+      background-color: #FF6347; 
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    
+    
+    section {
+      border: 2px solid rgb(0, 123, 255);
+      transition: border-color 0.3s ease;
+      background-color: #F0F8FF; 
+    }
+
+
+    section:hover {
+      border-color: rgb(0, 123, 255);
+    }
+    
+  </style>
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+</head>
+<body class="bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200">
+  
+  <header class="bg-purple-600 text-white py-6 shadow-lg">
+    <h1 class="text-3xl font-bold text-center">Parent Engagement</h1>
+  </header>
+
+
+<nav class="bg-white shadow-md">
+  <ul class="flex justify-center space-x-4 py-4">
+    <li><a href="#resources" class="nav-link text-blue-600 font-semibold hover:text-blue-800">Parent Resources Hub</a></li>
+    <li><a href="#workshops" class="nav-link text-blue-600 font-semibold hover:text-blue-800">Workshops for Parents</a></li>
+    <li><a href="#conferences" class="nav-link text-blue-600 font-semibold hover:text-blue-800">Conferences</a></li>
+    <li><a href="#forum" class="nav-link text-blue-600 font-semibold hover:text-blue-800">Parent Community Forum</a></li>
+    <li><a href="#feedback" class="nav-link text-blue-600 font-semibold hover:text-blue-800">Feedback Form</a></li>
+    <li><a href="#help" class="nav-link text-blue-600 font-semibold hover:text-blue-800">Help</a></li>
+  </ul>
+</nav>
+
+ 
+  <main class="max-w-4xl mx-auto mt-8 p-6 space-y-8">
+   
+    <section id="resources" class="shadow-lg rounded-lg p-6">
+      <h2 class="text-2xl font-bold text-purple-700">Parent Resources Hub</h2>
+      <p class="mt-4 text-gray-700">Access curated resources to guide your child's career journey.</p>
+      <button onclick="showResources()" class="mt-4 px-6 py-2 bg-purple-600 text-white rounded-lg shadow-md hover:bg-purple-800">Explore Resources</button>
+      <div id="resources-content" class="hidden mt-4">
+        <ul class="list-disc pl-6 text-gray-700">
+          <li>Career Development Articles</li>
+          <li>Guides on Supporting Student Learning</li>
+          <li>Interactive Tools for Career Exploration</li>
+        </ul>
+      </div>
+    </section>
+
+    
+    <section id="workshops" class="shadow-lg rounded-lg p-6">
+      <h2 class="text-2xl font-bold text-purple-700">Workshops for Parents</h2>
+      <p class="mt-4 text-gray-700">Join our regular workshops to help your child succeed in their career decisions.</p>
+      <button onclick="showWorkshops()" class="mt-4 px-6 py-2 bg-purple-600 text-white rounded-lg shadow-md hover:bg-purple-800">View Upcoming Workshops</button>
+      <div id="workshops-content" class="hidden mt-4">
+        <ul class="list-disc pl-6 text-gray-700">
+          <li>Workshop on Supporting Student Motivation</li>
+          <li>Career Counselling Techniques for Parents</li>
+          <li>Understanding the Job Market</li>
+        </ul>
+      </div>
+    </section>
+
+    
+    <section id="conferences" class="shadow-lg rounded-lg p-6">
+      <h2 class="text-2xl font-bold text-purple-700">Parent-Teacher-Student Conferences</h2>
+      <p class="mt-4 text-gray-700">Collaborate with teachers and students to discuss career goals.</p>
+      <button onclick="showConferences()" class="mt-4 px-6 py-2 bg-purple-600 text-white rounded-lg shadow-md hover:bg-purple-800">Schedule a Conference</button>
+      <div id="conferences-content" class="hidden mt-4 text-green-600 font-semibold">
+        Conference scheduled successfully! We will notify you with the details.
+      </div>
+    </section>
+
+   
+
+    <section id="forum" class="shadow-lg rounded-lg p-6">
+      <h2 class="text-2xl font-bold text-purple-700">Parent Community Forum</h2>
+      <p class="mt-4 text-gray-700">Join the community and discuss with other parents.</p>
+      <textarea id="forum-input" class="w-full mt-4 p-4 border border-gray-300 rounded-lg" placeholder="Share your thoughts..."></textarea>
+      <button onclick="postForum()" class="mt-4 px-6 py-2 bg-purple-600 text-white rounded-lg shadow-md hover:bg-purple-800">Post</button>
+      <div id="forum-posts" class="mt-4 space-y-4 bg-gray-50 p-4 rounded-lg shadow-inner"></div>
+    </section>
+
+   
+
+    <section id="feedback" class="shadow-lg rounded-lg p-6">
+      <h2 class="text-2xl font-bold text-purple-700">Feedback Form</h2>
+      <form onsubmit="submitFeedback(event)" class="mt-4">
+        <label for="feedback-input" class="block text-gray-700 font-semibold">Your Feedback:</label>
+        <textarea id="feedback-input" class="w-full mt-2 p-4 border border-gray-300 rounded-lg" required></textarea>
+        <button type="submit" class="mt-4 px-6 py-2 bg-purple-600 text-white rounded-lg shadow-md hover:bg-purple-800">Submit Feedback</button>
+      </form>
+      <p id="feedback-success" class="hidden mt-4 text-green-600 font-semibold">Thank you for your feedback!</p>
+    </section>
+
+    
+    <section id="help" class="shadow-lg rounded-lg p-6">
+      <h2 class="text-2xl font-bold text-purple-700">Help</h2>
+      <p class="mt-4 text-gray-700">Need assistance? Contact us or find helpful resources below.</p>
+      <p class="mt-4 text-blue-600">Email: support@ourwebsite.com</p>
+      <p class="text-blue-600">Phone: 1-800-123-4567</p>
+    </section>
+  </main>
+
+  
+
+  <div id="chatbot">
+    <div id="chatbot-header">Chatbot</div>
+    <div id="chatbot-body"></div>
+    <div id="chatbot-footer">
+      <textarea id="chatbot-input" placeholder="Type your message..."></textarea>
+      <button id="chatbot-send">Send</button>
+    </div>
+  </div>
+  <div id="chatbot-toggle">Chat</div>
+
+  
+  <script>
+   
+    gsap.from("section", { opacity: 0, y: 50, stagger: 0.3, duration: 1 });w
+
+    
+    document.getElementById('chatbot-toggle').addEventListener('click', function() {
+      const chatbot = document.getElementById('chatbot');
+      chatbot.style.display = chatbot.style.display === 'none' || chatbot.style.display === '' ? 'flex' : 'none';
+    });
+
+    function showResources() {
+      document.getElementById('resources-content').classList.toggle('hidden');
+    }
+
+    function showWorkshops() {
+      document.getElementById('workshops-content').classList.toggle('hidden');
+    }
+
+    function showConferences() {
+      document.getElementById('conferences-content').classList.toggle('hidden');
+    }
+
+    function postForum() {
+      const input = document.getElementById('forum-input').value;
+      if (input.trim()) {
+        const postDiv = document.createElement('div');
+        postDiv.className = 'p-4 bg-white shadow-md rounded-lg mb-2';
+        postDiv.textContent = input;
+        document.getElementById('forum-posts').appendChild(postDiv);
+        document.getElementById('forum-input').value = '';
+      }
+    }
+
+    function submitFeedback(event) {
+      event.preventDefault();
+      document.getElementById('feedback-success').classList.remove('hidden');
+      event.target.reset();
+    }
+  </script>
+</body>
+</html>
