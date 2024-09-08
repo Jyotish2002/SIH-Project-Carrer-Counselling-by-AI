@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
             case 'Avoid':
                 careerText = 'Administrative Assistant or Support Staff';
-                careerPageLink = 'administrative-assistant.html'; 
+                careerPageLink = 'administrative-assistant.html'; /* Upto here it is done if you want then do the next part below of it */
                 break;
             case 'Very':
                 careerText = 'Flexible Work Roles or Remote Positions';
