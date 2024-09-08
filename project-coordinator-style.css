@@ -1,0 +1,175 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+header {
+    background: linear-gradient(135deg, rgb(0, 123, 255), rgb(102, 179, 255));
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-links {
+    margin-top: 15px;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    transition: color 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.nav-links a:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 123, 255, 0.8);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.section {
+    padding: 50px 20px;
+    margin: 50px auto;
+    max-width: 1100px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.section:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+}
+
+.section h2 {
+    font-size: 2.2em;
+    margin-bottom: 25px;
+    color: rgb(0, 123, 255);
+    text-transform: uppercase;
+}
+
+.section p, .section ul {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.7;
+}
+
+.section ul {
+    list-style-type: disc;
+    padding-left: 30px;
+}
+
+.section ul li {
+    margin-bottom: 12px;
+}
+
+
+button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    background: linear-gradient(135deg, rgb(0, 123, 255), rgb(102, 179, 255));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, rgb(102, 179, 255), rgb(0, 123, 255));
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+#contact-form label {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+#contact-form input, #contact-form textarea {
+    padding: 12px;
+    font-size: 1.1em;
+    border: 2px solid rgb(0, 123, 255);
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact-form input:focus, #contact-form textarea:focus {
+    border-color: rgb(102, 179, 255);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+#contact-form button {
+    align-self: flex-start;
+}
+
+
+footer {
+    background: rgb(0, 123, 255);
+    padding: 20px;
+    text-align: center;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .section {
+        padding: 30px 20px;
+    }
+}
