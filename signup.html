@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login & Registration Form</title>
+  
+  <link rel="stylesheet" href="signstyle.css">
+</head>
+<body>
+  <div class="container">
+    <input type="checkbox" id="check">
+    
+   
+    <div class="login form">
+      <header>Login</header>
+      <form id="login-form">
+        <input type="email" id="login-email" placeholder="Enter your email" required>
+        <input type="password" id="login-password" placeholder="Enter your password" required>
+        <select id="login-user-type" required>
+          <option value="student">Student</option>
+          <option value="institute">Institute</option>
+          <option value="college">College</option>
+          <option value="counsellor">Counsellor</option>
+        </select>
+        <input type="button" class="button" value="Login" onclick="handleLogin()">
+        <a href="#">Forgot password?</a>
+      </form>
+      <div class="signup">
+        <span class="signup">Don't have an account?
+          <label for="check">Signup</label>
+        </span>
+      </div>
+    </div>
+    
+    
+    <div class="registration form">
+      <header>Signup</header>
+      <form id="signup-form">
+        <input type="text" id="signup-name" placeholder="Enter your name" required>
+        <input type="email" id="signup-email" placeholder="Enter your email" required>
+        <input type="tel" id="signup-phone" placeholder="Enter your phone number" required>
+        <input type="password" id="signup-password" placeholder="Create a password" required>
+        <select id="signup-user-type" required>
+          <option value="student">Student</option>
+          <option value="institute">Institute</option>
+          <option value="parent">Parent</option>
+          <option value="counsellor">Counsellor</option>
+        </select>
+        <input type="button" class="button" value="Signup" onclick="handleSignup()">
+      </form>
+      <div class="signup">
+        <span class="signup">Already have an account?
+          <label for="check">Login</label>
+        </span>
+      </div>
+    </div>
+  </div>
+
+ 
+  <script>
+    const loginForm = document.getElementById('login-form');
+    const signupForm = document.getElementById('signup-form');
+    const toggleLogin = document.getElementById('toggle-login');
+    const toggleSignup = document.getElementById('toggle-signup');
+    const formTitle = document.getElementById('form-title');
+
+    
+    function handleLogin() {
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+      const userType = document.getElementById('login-user-type').value;
+
+      if (email && password) {
+        if (userType === 'student') {
+          window.location.href = 'student.html';
+        } else if (userType === 'institute') {
+          window.location.href = 'institute.html';
+        } else if (userType === 'parent') {
+          window.location.href = 'parent.html';
+        } else if (userType === 'counsellor') {
+          window.location.href = 'counsellor.html';
+        }
+      } else {
+        alert('Please fill out all fields.');
+      }
+    }
+
+   
+    function handleSignup() {
+      const name = document.getElementById('signup-name').value;
+      const email = document.getElementById('signup-email').value;
+      const phone = document.getElementById('signup-phone').value;
+      const password = document.getElementById('signup-password').value;
+      const userType = document.getElementById('signup-user-type').value;
+
+      if (name && email && phone && password && userType) {
+       
+        window.location.href = 'login.html';
+      } else {
+        alert('Please fill out all fields.');
+      }
+    }
+  </script>
+</body>
+</html>
