@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login & Registration Form</title>
+  <!---Custom CSS File--->
+  <link rel="stylesheet" href="loginstyle.css">
+</head>
+<body>
+  <div class="container">
+    <input type="checkbox" id="check">
+    
+    <!-- Login Form -->
+    <div class="login form">
+      <header>Login</header>
+      <form id="loginForm">
+        <input type="text" id="email" placeholder="Enter your email" required>
+        <input type="password" id="password" placeholder="Enter your password" required>
+        <select id="userType" required>
+          <option value="" disabled selected>Select User Type</option>
+          <option value="student">Student</option>
+          <option value="institute">Institute</option>
+          <option value="parent">Parents</option>
+          <option value="counsellor">Counsellor</option>
+        </select>
+        <a href="#">Forgot password?</a>
+        <input type="button" class="button" value="Login" onclick="redirectToPage()">
+      </form>
+      <div class="signup">
+        <span class="signup">Don't have an account?
+          <label for="check">Signup</label>
+        </span>
+      </div>
+    </div>
+
+    <!-- Signup Form -->
+    <div class="registration form">
+      <header>Signup</header>
+      <form>
+        <input type="text" placeholder="Enter your name" required>
+        <input type="text" placeholder="Enter your email" required>
+        <input type="tel" placeholder="Enter your phone number" required>
+        <input type="password" placeholder="Create a password" required>
+        <input type="password" placeholder="Confirm your password" required>
+        <select required>
+          <option value="" disabled selected>Select User Type</option>
+          <option value="student">Student</option>
+          <option value="institute">Institute</option>
+          <option value="parent">Parents</option>
+          <option value="counsellor">Counsellor</option>
+        </select>
+        <input type="button" class="button" value="Signup">
+      </form>
+      <div class="signup">
+        <span class="signup">Already have an account?
+          <label for="check">Login</label>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function redirectToPage() {
+      const userType = document.getElementById("userType").value;
+
+      if (userType === "student") {
+        window.location.href = "Student.html"; // Redirect to student dashboard
+      } else if (userType === "institute") {
+        window.location.href = "Institute.html"; // Redirect to institute dashboard
+      } else if (userType === "Parent") {
+        window.location.href = "Parent.html"; // Redirect to college dashboard
+      } else if (userType === "counsellor") {
+        window.location.href = "Counsellor.html"; // Redirect to counsellor dashboard
+      } else {
+        alert("Please select a user type.");
+      }
+    }
+  </script>
+</body>
+</html>
