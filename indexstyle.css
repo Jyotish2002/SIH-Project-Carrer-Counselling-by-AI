@@ -179,15 +179,26 @@ width: 60%;
 .section1bottom{
     position: relative;
     display:flex ;
+    overflow: hidden;
     align-items: center;
     justify-content: space-between;
     padding: 10px 100px;
     top:0%;
+    animation: move 30s linear infinite;
 }
 .section1bottom img{
-    height: 60px;
+    height: 100px;
+    margin: 0 40px;
    
 
+}
+@keyframes move {
+    0% {
+        transform: translateX(100%); /* Start off the right side */
+    }
+    100% {
+        transform: translateX(-100%); /* Move to the left */
+    }
 }
 .section2 .services{
     font-size: 22px;

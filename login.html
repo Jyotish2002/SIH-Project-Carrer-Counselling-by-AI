@@ -47,8 +47,8 @@
         <select required>
           <option value="" disabled selected>Select User Type</option>
           <option value="student">Student</option>
-          <option value="institute">Institute</option>
-          <option value="parent">Parents</option>
+          <!-- <option value="institute">Institute</option>
+          <option value="parent">Parents</option> -->
           <option value="counsellor">Counsellor</option>
         </select>
         <input type="button" class="button" value="Signup">
@@ -66,13 +66,13 @@
       const userType = document.getElementById("userType").value;
 
       if (userType === "student") {
-        window.location.href = "Student.html"; 
+        window.location.href = "student-resources.html"; 
       } else if (userType === "institute") {
         window.location.href = "Institute.html"; 
       } else if (userType === "parent") {
         window.location.href = "parent.html"; 
       } else if (userType === "counsellor") {
-        window.location.href = "Counsellor.html"; 
+        window.location.href = "Counselor.html"; 
       } else {
         alert("Please select a user type.");
       }
