@@ -127,6 +127,47 @@ nav button{
 
 
 }
+
+.tech-button {
+    display: inline-block;
+    background-color: #1a1a1a; /* Darker background */
+    color: #00f0ff; /* Soft neon text color */
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 2px solid #00f0ff; /* Border with matching neon color */
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.3); /* Subtle glow */
+}
+
+.tech-button:hover {
+    background-color: #00f0ff; /* Background changes to neon blue */
+    color: #1a1a1a; /* Text becomes dark */
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.6); /* Slightly stronger glow on hover */
+    transform: translateY(-3px); /* Slight hover effect */
+}
+
+.tech-button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 240, 255, 0.1);
+    transition: all 0.4s ease;
+    opacity: 0;
+}
+
+.tech-button:hover:before {
+    opacity: 1;
+    background: rgba(0, 240, 255, 0.2); /* Soft highlight effect on hover */
+}
+
+
 .center-part2 img{
     position: absolute;
     right: 1%;
@@ -342,3 +383,24 @@ button a {
     position: relative;
     z-index: 1;
 }
+
+
+.small-button {
+    display: inline-block;
+    background-color: #330cdf; /* Button background color */
+    color: #fff; /* Text color */
+    padding: 8px 20px; /* Smaller padding for a compact button */
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px; /* Rounded corners */
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+.small-button:hover {
+    background-color: #0088cc; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight movement on hover */
+}
+

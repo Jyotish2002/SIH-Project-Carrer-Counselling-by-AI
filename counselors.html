@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Counselors</title>
+    <link rel="stylesheet" href="counselors.css"> <!-- Link to your CSS -->
+</head>
+<body>
+    <header>
+        <h1>Meet Our Expert Career Counselors</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="quiz.html">Psychometric Test</a>
+            <a href="student-resources.html">Student Resources</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Our Counselors are Here to Guide You</h2>
+            <p>Our expert counselors are dedicated to helping you find the right path for your future. They specialize in various fields and provide personalized advice to help you achieve your career goals.</p>
+
+            <div class="counselor-grid">
+                <!-- Counselor 1 -->
+                <div class="counselor-card">
+                    <img src="counselor1.jpg" alt="Counselor 1">
+                    <h3>Dr. Priya Sharma</h3>
+                    <p><strong>Specialization:</strong> Engineering & Technology</p>
+                    <p>With 15+ years of experience, Dr. Priya Sharma has guided thousands of students toward successful careers in technology and engineering fields.</p>
+                    <a href="javascript:void(0)" class="learn-more" onclick="toggleDetails('details1')">Learn More</a>
+                    <p id="details1" class="hidden">Dr. Priya Sharma is a well-known career counselor in the engineering sector. She has conducted several workshops and seminars, helping students gain insight into the latest technology trends, job prospects, and educational pathways. Her strong industry connections allow her to provide students with internship opportunities, making her one of the most sought-after advisors in her field.</p>
+                </div>
+
+                <!-- Counselor 2 -->
+                <div class="counselor-card">
+                    <img src="counselor2.jpg" alt="Counselor 2">
+                    <h3>Mr. Rahul Mehta</h3>
+                    <p><strong>Specialization:</strong> Business & Management</p>
+                    <p>Rahul Mehta is an expert in business and management careers, offering insights into MBA programs and corporate leadership.</p>
+                    <a href="javascript:void(0)" class="learn-more" onclick="toggleDetails('details2')">Learn More</a>
+                    <p id="details2" class="hidden">Mr. Rahul Mehta has over a decade of experience in guiding students toward careers in business, management, and entrepreneurship. His mentorship covers everything from selecting the right MBA program to building strong leadership and networking skills. Rahul has a track record of helping students secure internships and full-time roles in multinational corporations.</p>
+                </div>
+
+                <!-- Counselor 3 -->
+                <div class="counselor-card">
+                    <img src="counselor3.jpg" alt="Counselor 3">
+                    <h3>Ms. Anjali Verma</h3>
+                    <p><strong>Specialization:</strong> Medicine & Healthcare</p>
+                    <p>Anjali Verma specializes in guiding students toward careers in healthcare, medicine, and allied sciences.</p>
+                    <a href="javascript:void(0)" class="learn-more" onclick="toggleDetails('details3')">Learn More</a>
+                    <p id="details3" class="hidden">Ms. Anjali Verma has been helping students navigate the complex world of medical education for over 12 years. She works with aspiring doctors, nurses, and healthcare professionals, providing guidance on academic programs, entrance exams, and career pathways. Her deep understanding of the healthcare system ensures that students are prepared for both academic and professional challenges.</p>
+                </div>
+
+                <!-- Counselor 4 -->
+                <div class="counselor-card">
+                    <img src="counselor4.jpg" alt="Counselor 4">
+                    <h3>Mrs. Kavita Joshi</h3>
+                    <p><strong>Specialization:</strong> Arts & Humanities</p>
+                    <p>Kavita Joshi has spent over a decade helping students find their passion in the arts, literature, and humanities.</p>
+                    <a href="javascript:void(0)" class="learn-more" onclick="toggleDetails('details4')">Learn More</a>
+                    <p id="details4" class="hidden">Mrs. Kavita Joshi has been guiding students in the arts and humanities sector for the past 10 years. Her expertise includes helping students explore careers in creative writing, performing arts, visual arts, and more. She has helped many students secure scholarships and placements at top universities, fostering their artistic talents into meaningful careers.</p>
+                </div>
+
+                <!-- Counselor 5 -->
+                <div class="counselor-card">
+                    <img src="counselor5.jpg" alt="Counselor 5">
+                    <h3>Dr. Suresh Desai</h3>
+                    <p><strong>Specialization:</strong> Science & Research</p>
+                    <p>Dr. Suresh Desai is a leader in science and research, helping students navigate through academic research and discovery.</p>
+                    <a href="javascript:void(0)" class="learn-more" onclick="toggleDetails('details5')">Learn More</a>
+                    <p id="details5" class="hidden">Dr. Suresh Desai has been actively involved in mentoring students interested in scientific research. His experience spans across various disciplines, including physics, chemistry, and biology. He guides students through the process of publishing research papers, applying for research grants, and securing positions in research institutes worldwide.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Career Navigator. All rights reserved.</p>
+        <nav>
+            <a href="#">Contact Us</a>
+            <a href="#">About Us</a>
+            <a href="#">Privacy Policy</a>
+        </nav>
+    </footer>
+
+    <script>
+        // Toggle the visibility of the counselor details
+        function toggleDetails(id) {
+            var element = document.getElementById(id);
+            if (element.classList.contains('hidden')) {
+                element.classList.remove('hidden');
+            } else {
+                element.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
