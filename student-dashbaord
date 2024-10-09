@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="student-dashboard.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to CareerNavigator, Student</h1>
+    </header>
+
+    <section class="profile-section">
+        <h2>Edit Profile</h2>
+        <div class="profile-edit">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+            
+            <label for="number">Phone Number:</label>
+            <input type="text" id="number" placeholder="Enter your phone number">
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email">
+            
+            <button id="save-btn">Save Changes</button>
+        </div>
+    </section>
+
+    <section class="help-section">
+        <h2>Need Help?</h2>
+        <button id="help-btn">Ask a Counselor</button>
+    </section>
+
+    <section class="career-path-section">
+        <h2>Explore Career Paths</h2>
+        <div class="career-cards">
+            <div class="card">
+                <h3>Software Developer</h3>
+                <p>Learn about becoming a software developer, the skills required, and the opportunities available.</p>
+            </div>
+            <div class="card">
+                <h3>Data Scientist</h3>
+                <p>Explore the world of data science and discover how to build a career in this field.</p>
+            </div>
+            <div class="card">
+                <h3>UX/UI Designer</h3>
+                <p>Dive into the creative aspects of UX/UI design and understand the career prospects.</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="student-dashboard.js"></script>
+</body>
+</html>
