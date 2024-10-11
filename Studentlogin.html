@@ -11,6 +11,7 @@
         <div class="form-container">
             <h1>Student Login</h1>
             <form id="login-form">
+                <input type="text" id="name" placeholder="Enter your name" required>
                 <input type="email" id="email" placeholder="Enter your email" required>
                 <input type="password" id="password" placeholder="Enter your password" required>
                 <button type="submit">Login</button>
@@ -23,7 +24,16 @@
     <script>
         document.getElementById('login-form').addEventListener('submit', function (e) {
             e.preventDefault();
-            window.location.href = 'student.html'; 
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            
+            // Store name and email in localStorage
+            localStorage.setItem('studentName', name);
+            localStorage.setItem('studentEmail', email);
+
+            // Redirect to dashboard
+            window.location.href = 'student-dashboard.html';
         });
     </script>
 </body>
