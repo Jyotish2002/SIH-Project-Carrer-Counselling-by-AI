@@ -340,7 +340,7 @@ width: 60%;
 }
 
 .help-form button:hover {
-    background: #0056b3;
+    background: #110ee7;
 }
 .help-form>h4{
     font-size: 40px;
@@ -352,7 +352,7 @@ width: 60%;
 button {
     padding: 10px 20px;
     background-color: transparent;
-    border: 2px solid #4CAF50;
+    border: 2px solid #3b12e1;
     color: #4CAF50;
     font-size: 16px;
     cursor: pointer;
