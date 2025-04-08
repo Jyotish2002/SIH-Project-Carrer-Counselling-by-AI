@@ -1,135 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrer Navigation</title>
-    <link rel="stylesheet" href="indexstyle.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Career Navigator</title>
+  <style>
+    :root {
+      --primary-color: #4a90e2;
+      --secondary-color: #ffffff;
+      --text-color: #333333;
+      --accent-color: #f0f0f0;
+      --bg-dark: #1e1e2f;
+      --text-dark: #f0f0f0;
+      --card-dark: #2c2c3c;
+    }
+
+    body.dark-mode {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    body.dark-mode header,
+    body.dark-mode .description,
+    body.dark-mode .bubble,
+    body.dark-mode .help-form {
+      background-color: var(--card-dark);
+      color: var(--text-dark);
+      border-color: #444;
+    }
+
+    body.dark-mode .chat-btn,
+    body.dark-mode .btn-more,
+    body.dark-mode .help-form button {
+      background-color: #6bafff;
+    }
+
+    body.dark-mode header nav a {
+      color: var(--text-dark);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      transition: all 0.3s ease-in-out;
+    }
+
+    body {
+      background-color: var(--accent-color);
+      color: var(--text-color);
+    }
+
+    header {
+      background-color: var(--secondary-color);
+      padding: 20px;
+      border-bottom: 2px solid #ddd;
+      animation: slideDown 1s ease forwards;
+    }
+
+    header nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-left {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+
+    .nav-right {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header nav a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 600;
+      position: relative;
+      font-size: 1rem;
+    }
+
+    header nav a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary-color);
+      bottom: -2px;
+      left: 0;
+      transition: width 0.3s;
+    }
+
+    header nav a:hover::after {
+      width: 100%;
+    }
+
+    .toggle-dark-nav {
+      padding: 8px 16px;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .main {
+      text-align: center;
+      padding: 60px 20px;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    .main h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: var(--primary-color);
+    }
+
+    .chat-btn {
+      margin-top: 15px;
+      padding: 14px 28px;
+      border: none;
+      background-color: var(--primary-color);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .chat-btn:hover {
+      background-color: #3b7bd5;
+    }
+
+    .description {
+      margin: 50px auto;
+      max-width: 700px;
+      font-size: 16px;
+      line-height: 1.8;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .btn-more {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: var(--primary-color);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+
+    .btn-more:hover {
+      background-color: #357ac3;
+    }
+
+    .section {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 50px 0;
+      gap: 40px;
+    }
+
+    .bubble {
+      border: 2px dashed #ccc;
+      padding: 25px;
+      border-radius: 20px;
+      width: 280px;
+      background-color: #ffffff;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .bubble:hover {
+      transform: scale(1.05);
+    }
+
+    .help-form {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 30px;
+      border: 2px solid var(--primary-color);
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+
+    .help-form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .help-form input,
+    .help-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .help-form button {
+      padding: 14px 24px;
+      background-color: var(--primary-color);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .help-form button:hover {
+      background-color: #326fc1;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .main {
+        padding: 30px 10px;
+      }
+
+      .main h1 {
+        font-size: 24px;
+      }
+
+      .bubble {
+        width: 90%;
+      }
+
+      header nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-right {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .main h1 {
+        font-size: 20px;
+      }
+
+      .chat-btn,
+      .btn-more,
+      .help-form button {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <section class="section1">
-        <nav>
-            <h1>CareerNavigator</h1>
-            <div class="part2">
-                <a href="Studentlogin.html" target=""><h4>Students</h4></a>
-               <!-- <a href="institutions.html" target=""><h4>Institutions</h4></a>-->
-                <a href="counselorslogin.html" target=""><h4>Career Counselors</h4></a>
-              <!--  <a href="parentlogin.html" target=""><h4>Parents</h4></a>-->
-                <a href="login.html" target=""><h4>Login</h4></a>
-                <a href="signup.html" target=""> <button><h4>Get Started</h4> </button></a>
-            </div>
-            
-        </nav>
-        <div class="center">
-        <div class="center-part1">
-            <h1>A Career Counselling Platform to help you navigate your career path</h1>
-            <a href="https://studentcarrierrecomendationfinal1-jkt4yhuxu2wtzp62mthext.streamlit.app/#career-recommendation-prediction" class="tech-button">Chat With AI</a>
-            
-        </div>
-        <div class="center-part2">
-            <img src="https://cdn.open-pr.com/W/b/Wb08470791_g.jpg" alt="">
-        </div>
-        </div>
-        <div class="section1bottom">
-            <img src="https://seeklogo.com/images/D/delhi-public-school-logo-E8BDE7B79B-seeklogo.com.png" alt="">
-            <img src="https://th.bing.com/th/id/OIP.ISIRAS8qT3HEQQshhZfFXwHaHa?rs=1&pid=ImgDetMain" alt="">
-            <img src="https://th.bing.com/th/id/R.83c4152a4f52e338179a9a873ab95ea6?rik=F0JB6whcQl%2bF5Q&riu=http%3a%2f%2fsaraswatidhamtan.in%2fimages%2fschool_name.png&ehk=Pf%2fSm6CPSxorESIoua0SpdHIo4yBKG5BQaY2QOsnug8%3d&risl=&pid=ImgRaw&r=0" alt="">
-            <img src="https://th.bing.com/th/id/OIP.3M5pQe6x3f4q4wQ6qQEytQHaB5?w=1556&h=400&rs=1&pid=ImgDetMain" alt="">
-            <img src="https://th.bing.com/th/id/OIP.EvAuGqKUrvlcHgyiS-wIowAAAA?rs=1&pid=ImgDetMain" alt="">
-            
-            <!-- <img src="https://sarvodayapublicschool.in/wp-content/uploads/2021/06/Artboard-1LogoB-min.png" alt=""> -->
-            
-            <!-- Duplicate images for seamless effect -->
-            <img src="https://seeklogo.com/images/D/delhi-public-school-logo-E8BDE7B79B-seeklogo.com.png" alt="">
-            <img src="https://th.bing.com/th/id/OIP.ISIRAS8qT3HEQQshhZfFXwHaHa?rs=1&pid=ImgDetMain" alt="">
-            <img src="https://th.bing.com/th/id/R.83c4152a4f52e338179a9a873ab95ea6?rik=F0JB6whcQl%2bF5Q&riu=http%3a%2f%2fsaraswatidhamtan.in%2fimages%2fschool_name.png&ehk=Pf%2fSm6CPSxorESIoua0SpdHIo4yBKG5BQaY2QOsnug8%3d&risl=&pid=ImgRaw&r=0" alt="">
-            <img src="https://th.bing.com/th/id/OIP.3M5pQe6x3f4q4wQ6qQEytQHaB5?w=1556&h=400&rs=1&pid=ImgDetMain" alt="">
-            <img src="https://th.bing.com/th/id/OIP.EvAuGqKUrvlcHgyiS-wIowAAAA?rs=1&pid=ImgDetMain" alt="">
-            <!-- <img src="https://sarvodayapublicschool.in/wp-content/uploads/2021/06/Artboard-1LogoB-min.png" alt=""> -->
-        </div>
-        
+  <header>
+    <nav>
+      <div class="nav-left">Career Navigator</div>
+      <div class="nav-right">
+        <a href="#">Student</a>
+        <a href="#">Career Counsellors</a>
+        <a href="#">Login</a>
+        <a href="#">Get Started</a>
+        <button id="darkModeBtn" class="toggle-dark-nav" onclick="toggleDarkMode()">Enable Dark Mode</button>
+      </div>
+    </nav>
+  </header>
 
-    </section>
-     <section class="section2">
-        <img src="https://dl.dropboxusercontent.com/s/yepv2db4zblp80y/cc-image_1.jpg" alt="" srcset="">
-        <div class="services">
-            <p>Our Psychometric Assessment Test is a carefully crafted tool that helps students navigate their career choices. With 10 thoughtfully designed questions, the test evaluates your interests, personality, and thinking skills. Based on your responses, it provides personalized career suggestions, helping you explore options that align with your strengths and goals.</p>
+  <div class="main">
+    <h2>A Career Counselling Platform to help you navigate your career path</h2>
+    <button class="chat-btn">Chat With AI</button>
 
-<p>Using a straightforward algorithm behind the scenes, the test processes your answers and delivers tailored career recommendations. While it isn't AI-based, this tried-and-true method offers reliable guidance, ensuring you receive actionable advice to move forward confidently in your career journey.</p>
+    <div class="description">
+      <p>Our Psychometric Assessment Tool is scientifically developed to understand your interests, strengths, and preferences and help you make the right career decisions.</p>
+      <p>Whether you are a student or a working professional, our tools and expert guidance will empower your career growth journey.</p>
+      <button class="btn-more">View More</button>
+    </div>
 
-            <button><a href="quiz.html">Test Now</button></a>
-        </div>
-        <div class="container">
-            <div class="elem line1 left">
-                <div class="elem-part0">
-                    <h2>For Students</h2><br>
-                    <h4>Discover the perfect stream and subjects for your career.
-                        Get ahead of the curve and build a solid foundation for your
-                        career with the right stream and subject choices.</h4>
-                    <a href="student-resources.html" class="small-button">Explore Resources</a> <!-- Add a hyperlink to a resources page -->
-                </div>
-            </div>
-            
-            <!-- <div class="elem black line1 right">
-                
-                <div class="elem-part2">
+    <div class="section">
+      <div class="bubble">
+        <h3>For Student</h3>
+        <p>Discover the right career path based on your strengths and interests.</p>
+        <button class="btn-more">Know More</button>
+      </div>
+      <div class="bubble">
+        <h3>For Counselors</h3>
+        <p>Join our community and expand your reach to help more students.</p>
+        <button class="btn-more">Grow Now</button>
+      </div>
+    </div>
 
-                    <h2>For Parents</h2><br>
-                    <h4>Discover the perfect stream and subjects for your career
-                        Get ahead of the curve and build a solid foundation for your
-                        career with the right stream and subject choices.</h4>
-                </div>
-                
-            </div> -->
-            <!-- <div class="elem black line2 left">
-                
-                <div class="elem-part4">
+    <div class="help-form">
+      <h3>Need More Help</h3>
+      <form id="contactForm">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required />
 
-                <h2>For Institutions</h2><br>
-                    <h4>Discover the perfect stream and subjects for your career
-                        Get ahead of the curve and build a solid foundation for your
-                        career with the right stream and subject choices.</h4>
-                </div>
-               
-                
+        <label for="email">Email-ID:</label>
+        <input type="email" id="email" name="email" required />
 
-            </div> -->
-            <div class="elem line2 right">
-                <div class="elem-part6">
-                    <h2>For Counselors</h2><br>
-                    <h4>Discover the perfect stream and subjects for your career.
-                        Get ahead of the curve and build a solid foundation for your
-                        career with the right stream and subject choices.</h4>
-                    <a href="counselors.html" class="small-button">Know More</a>
-                </div>
-            </div>
-            
-     </section>
-     <section class="section3">
-         <div class="help-form">
-            
-            <h4>Need More Help?</h4>
-            <form action="submit-help-request.html" method="post">
-                <div class="form-group">
-                    <label for="name">Your Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Your Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Your Message:</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
 
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
 
-     </section>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-     <script src="indexscript.js"></script>
+  <script>
+    const darkModeBtn = document.getElementById('darkModeBtn');
+
+    function toggleDarkMode() {
+      const body = document.body;
+      body.classList.toggle('dark-mode');
+
+      if (body.classList.contains('dark-mode')) {
+        darkModeBtn.textContent = 'Disable Dark Mode';
+      } else {
+        darkModeBtn.textContent = 'Enable Dark Mode';
+      }
+    }
+
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      alert(`Thanks ${name}! Your message has been submitted.`);
+      event.target.reset();
+    });
+  </script>
 </body>
 </html>
