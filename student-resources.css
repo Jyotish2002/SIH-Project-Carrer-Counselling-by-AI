@@ -104,9 +104,9 @@ footer p {
     font-size: 0.9em;
 }
 
-/* Responsive design */
+/* Responsive design for tablets */
 @media (max-width: 768px) {
-    h1 {
+    header h1 {
         font-size: 1.8em;
     }
 
@@ -114,7 +114,66 @@ footer p {
         font-size: 1.6em;
     }
 
+    main {
+        padding: 15px;
+        margin: 15px;
+    }
+
+    nav a {
+        padding: 8px 12px;
+        font-size: 0.95em;
+    }
+
     ul li a {
         font-size: 1em;
+    }
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 480px) {
+    header {
+        padding: 15px 10px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        padding: 8px;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #2a2a2a;
+    }
+
+    main {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    ul li {
+        padding: 12px;
+    }
+
+    ul li a {
+        font-size: 1em;
+    }
+
+    footer {
+        padding: 10px;
+    }
+
+    footer p {
+        font-size: 0.8em;
     }
 }
